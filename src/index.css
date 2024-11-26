@@ -30,6 +30,11 @@ body{
     }
 
     @font-face{
+        font-family: 'zentry';
+        src: url('/fonts/zentry.woff2') format('woff2');
+    }
+
+    @font-face{
         font-family: 'carlo';
         src: url('/fonts/carlo.woff2') format('woff2');
     }

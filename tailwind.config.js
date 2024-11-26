@@ -10,6 +10,7 @@ export default {
     extend: {
       fontFamily:{
         carlo:['carlo', 'sans-serif'],
+        zentry:['zentry', 'sans-serif'],
         'circular-web': ['circular-web', 'sans-serif'],
         general: ['general', 'sans-serif'],
         'robert-medium': ['robert-medium', 'sans-serif'],
