@@ -1,6 +1,12 @@
 import { FaHtml5, FaNpm, FaCss3, FaReact, FaNode, FaDatabase, FaGithub } from "react-icons/fa";
 import { SiJavascript, SiExpress  } from "react-icons/si";
 
+import { FaLinkedin } from "react-icons/fa";
+import { FaSquareXTwitter } from "react-icons/fa6";
+import { FaFacebook } from "react-icons/fa";
+import { FaInstagramSquare } from "react-icons/fa";
+
+
 const nav = ["Home", "About", "Projects", "Contact"]
 
 
@@ -12,15 +18,29 @@ const greeting = {
     resumeLink:"https://drive.google.com/file/d/1o_BT16i_dZ9jdJ9g9LaCIuYsip2D-Q_f/view?usp=sharing"
 };
 
-const socialMediaLinks = {
-    github: "https://github.com/praveen12kumar",
-    linkedin: "https://www.linkedin.com/in/praveen-kumar-88644bbb",
-    twitter: "https://twitter.com/praveenshakya20",
-    gmail:"praveenshakya1@gmail.com",
-    facebook: "https://www.facebook.com/praveen.shakya.792",
-    instagram:"https://www.instagram.com/kumarpraveen1/",
-    display:true,
-}
+const socialMediaLinks = [
+  {
+    icon: FaGithub,
+    href: "https://github.com/praveen12kumar",
+  },
+  {
+    icon: FaLinkedin,
+    href: "https://www.linkedin.com/in/praveen-shakya-3a1b4123b/",
+  },
+  {
+    icon: FaSquareXTwitter,
+    href: "https://twitter.com/praveen_shakya",
+  },
+  {
+    icon: FaFacebook,
+    href: "https://www.facebook.com/praveen.shakya.1/",
+  },
+  {
+    icon: FaInstagramSquare,
+    href: "https://www.instagram.com/praveen_shakya/",
+  },
+];
+
 
 // Skills Section
 
