@@ -20,6 +20,7 @@ export default {
           dark:'1E201E',
           blue:'#3340AF',
           slate:'#E7E7E7',
+          darkSlate:'rgb(15 23 42)',
           background1:'#FAFAFA',
           background2:'#FFFFFF',
           
@@ -27,5 +28,20 @@ export default {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.text-stroke-1': {
+          '-webkit-text-stroke': '1px black',
+        },
+        '.text-stroke-2': {
+          '-webkit-text-stroke': '2px black',
+        },
+        '.text-stroke-white': {
+          '-webkit-text-stroke': '1px white',
+        },
+      };
+      addUtilities(newUtilities, ['responsive', 'hover']);
+    }
+  ],
 }

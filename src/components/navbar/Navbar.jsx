@@ -133,14 +133,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        {open && (
-          <div className="w-full absolute top-0 right-0 z-50">
-            <div
-              className="fixed inset-0 bg-black bg-opacity-50"
-              onClick={() => setOpen(false)}
-            />
-            <Sidebar setOpen={setOpen} />
-          </div>
+        {open && ( <Sidebar setOpen={setOpen} />
         )}
       </header>
     </>

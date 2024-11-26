@@ -1,76 +1,81 @@
-import React from "react";
+import React, { useRef } from "react";
 import { nav } from "../../utils/constants";
 import { RxCross1 } from "react-icons/rx";
-import { motion } from "framer-motion";
-
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const Sidebar = ({ setOpen }) => {
+  const textRef = useRef([]); // Array of refs for each text
+  const timeLines = useRef([]); // Array of timelines for hover animations
 
-    const variants = {
-        hidden:{
-            opacity:0,
-            y:-100,
-        },
-        visible:{
-            opacity:1,
-            y:0,
-            transition:{
-                staggerChildren:0.2,
-                duration:0.5
-            }
-            
-        }
-    }
-
-    const variants2 = {
-      hidden:{
-          opacity:0,
-          y:-400,
+  useGSAP(() => {
+    // Entry animation for all items
+    gsap.to("li", {
+      backgroundImage: "linear-gradient(90deg, white 0%, white 100%, #696c75 100%)",
+      stagger:{
+          each:0.1,
+          ease:"power2.out"
       },
-      visible:{
-        opacity:1,
-        y:0,
-        transition:{
-            duration:1
-        }
-      }
-    }
+      duration:1,
+  })
+  });
 
-   
+  useGSAP(() => {
+    // Individual hover animations
+    timeLines.current = textRef.current.map((text) =>
+      gsap.timeline({ paused: true }).to(text, {
+        color: "#1A2746",
+        x: 10,
+        scale: 1.3,
+        duration: 0.3,
+        ease: "power1.out",
+        willChange: "transform",
+      })
+    );
+  });
+
+  // Handle mouse events for hover animations
+  const handleMouseEnter = (index) => {
+    timeLines.current[index].play();
+  };
+  const handleMouseLeave = (index) => {
+    timeLines.current[index].reverse();
+  };
 
   return (
-    <motion.div 
-      variants={variants2} initial="hidden" whileInView="visible"
-    className="fixed inset-0 z-50">
-      {/* Fullscreen Overlay */}
-      <div className="absolute inset-0 bg-transparent bg-opacity-50" onClick={() => setOpen(false)}/>
-
-      {/* Sidebar */}
-      <div 
-        className="absolute top-0 left-0 w-full  bg-black shadow-lg rounded-br-3xl rounded-bl-3xl
-                   transform transition-transform duration-300 ease-in-out translate-y-0"
-      >
+    <div
+      onClick={() => setOpen(false)}
+      id="sidebar"
+      className="w-screen h-[70vh] bg-darkSlate absolute top-0 left-0 rounded-b-3xl "
+    >
+      <div className="w-full h-full relative flex flex-col">
         {/* Close Button */}
-        <div className="flex justify-end">
-          <RxCross1
-            className="cursor-pointer text-white text-2xl absolute top-4 right-4"
-            onClick={() => setOpen(false)}
-          />
+        <div className="absolute top-6 right-10" onClick={() => setOpen(false)}>
+          <RxCross1 className="text-2xl text-white cursor-pointer" />
         </div>
 
-        {/* Navigation Items */}
-        <motion.div variants={variants} initial="hidden" whileInView="visible" className="flex flex-col items-center gap-6 my-16">
-          {nav.map((item, index) => (
-            <motion.li variants={variants} 
-              key={index}
-              className="text-2xl uppercase list-none text-white font-bold hover:bg-slate-700 py-3 w-full text-center transition-colors duration-300"
-            >
-              {item}
-            </motion.li>
-          ))}
-        </motion.div>
+        {/* Sidebar Content */}
+        <div className="w-full h-full flex items-center px-10">
+        <ul className='flex flex-col items-start gap-6 list-none'>
+               {
+                 nav.map((item, index) => (
+                   <li ref={(el) => (textRef.current[index] = el)} key={index} className="text-[8vw] md:text-[4vw] min-w-fit font-circular-web font-bold cursor-pointer uppercase relative "
+                   style={{
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                     backgroundImage: "linear-gradient(90deg, white 0%, white 0%, #696c75 0%)"
+                  }}
+                  onMouseEnter={()=>handleMouseEnter(index)}
+                  onMouseLeave={()=>handleMouseLeave(index)}
+                   > 
+                     {item}
+                   </li>
+                 ))
+               } 
+            </ul>
+        </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
