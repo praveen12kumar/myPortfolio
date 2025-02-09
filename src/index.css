@@ -38,6 +38,10 @@ body{
         font-family: 'carlo';
         src: url('/fonts/carlo.woff2') format('woff2');
     }
+    @font-face {
+        font-family: 'poppins';
+        src: url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+    }
 }
 
 @layer utilities{

@@ -23,8 +23,8 @@ const Home = () => {
               </p>
             </div>
 
-            <div className="w-full flex-center mt-20 ">
-                <Button text="Projects" classes={"px-16 py-3 font-general text-lg"} />
+            <div className="w-full flex-center mt-20 z-50">
+                <Button text="Projects" classes={"px-16 py-3 font-general text-lg z-50"} />
             </div>
 
           </div>

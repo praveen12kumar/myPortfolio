@@ -15,6 +15,9 @@ export default {
         general: ['general', 'sans-serif'],
         'robert-medium': ['robert-medium', 'sans-serif'],
         'robert-regular': ['robert-regular', 'sans-serif'],
+        'roboto': ['roboto', 'sans-serif'],
+        'mulish': ['mulish', 'sans-serif'],
+        'source-sans-3': ['source-sans-3', 'sans-serif'],
       },
       colors: {
           light:'ECDFCC',
@@ -24,9 +27,11 @@ export default {
           darkSlate:'rgb(15 23 42)',
           background1:'#FAFAFA',
           background2:'#FFFFFF',
-          
-        
+      },
+      daisyui:{
+        themes:['light']
       }
+      
     },
   },
   plugins: [
@@ -43,6 +48,7 @@ export default {
         },
       };
       addUtilities(newUtilities, ['responsive', 'hover']);
-    }
+    },
+    require("daisyui"),
   ],
 }
