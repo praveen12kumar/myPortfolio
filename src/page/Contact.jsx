@@ -42,7 +42,7 @@ function Contact() {
           <div className="w-full h-full md:w-1/2 flex items-center  justify-center">
             <form
               action=""
-              name="contactUs"
+              name="contactUS"
               netlify
               className="w-4/5 h-full flex flex-col items-center justify-center"
             >
