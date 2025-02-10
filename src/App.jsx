@@ -5,6 +5,7 @@ import CursorTracker from './components/cursorTracker/CursorTracker';
 import About from './page/About';
 import Projects from './page/Projects';
 import Contact from './page/Contact';
+import Footer from './components/footer/Footer';
 function App() {
   
 
@@ -16,6 +17,7 @@ function App() {
       <About/>
       <Projects/>
       <Contact/>
+      <Footer/>
     </>
   )
 }

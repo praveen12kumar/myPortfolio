@@ -69,7 +69,7 @@ function Contact() {
                   className="flex items-center gap-2 font-zentry"
                   htmlFor="email"
                 >
-                  <MdEmail className="w-5 h-5 text-sky-900" />
+                  <MdEmail className="w-6 h-6 text-sky-900" />
                   Email
                 </label>
                 <input

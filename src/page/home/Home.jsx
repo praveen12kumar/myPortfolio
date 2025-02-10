@@ -24,7 +24,7 @@ const Home = () => {
             </div>
 
             <div className="w-full flex-center mt-20 z-50">
-                <Button text="Projects" classes={"px-16 py-3 font-general text-lg z-50"} />
+                <Button text="Projects" classes={"px-16 py-3 btn bg-[#039E91] hover:bg-[#059084]  text-white font-mulish  text-lg z-50 uppercase"} />
             </div>
 
           </div>
@@ -32,7 +32,7 @@ const Home = () => {
       </div>
 
       <div className="h-72 px-1 w-16  hidden lg:block z-50 fixed top-1/2 left-0 -translate-y-1/2">
-        <SocialMedia/>
+        <SocialMedia className="flex-col"/>
       </div>
       {/* backgroundImage */}
       <div

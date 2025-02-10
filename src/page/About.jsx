@@ -32,6 +32,8 @@ function About(){
                         <button className="btn btn-outline cursor-text">Node</button>
                         <button className="btn btn-outline cursor-text">Express</button>
                         <button className="btn btn-outline cursor-text">MongoDB</button>
+                        <button className="btn btn-outline cursor-text">TypeScript</button>
+                        <button className="btn btn-outline cursor-text">NextJs</button>
                         <button className="btn btn-outline cursor-text">Git</button>
                         <button className="btn btn-outline cursor-text">GitHub</button>
                         <button className="btn btn-outline cursor-text">Redux Toolkit</button>
