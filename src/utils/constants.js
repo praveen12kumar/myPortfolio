@@ -129,13 +129,15 @@ const skillsSection = {
   //https://i.ibb.co/tMCgjNP/social-media.png
 
   const myProjects = {
-    title: "My Recent Work",
+    title: "Projects",
+    description:"Here you will find some of the projects that I have worked on.",
     seemore:"Want to see more Click here",
     display: true, // Set false to hide this section, defaults to true
     projects: [
       {
         image: "https://i.ibb.co/GPnsWc4/ecom1.jpg",
         projectName: "Clothverse",
+        category:"Ecommerce",
         projectDesc:
           "A Full-stack application using React for the Front-end and NodeJs with Express for the Backend search filter mechanism, a user-friendly shopping  cart, and a wishlist feature to improve user engagement and experience.",
         footerLink: [
@@ -153,6 +155,7 @@ const skillsSection = {
       {
         image:"https://i.ibb.co/mCwhBXS/socially.jpg",
         projectName: "Socially",
+        category:"Social Media",
         projectDesc: "Socially is a dynamic social media application built using React. The platform offers a seamless user experience with features such as Quick Login, Profile Management, News Feed, and Follow Requests. The app also utilizes JWT (JSON Web Token) for secure, token-based authentication, ensuring user data and sessions are protected.",
         footerLink: [
           {
@@ -168,6 +171,7 @@ const skillsSection = {
       {
         image:"https://i.ibb.co/k1DVgpg/component.png",
         projectName: "CSS Component Library",
+        category:"Library",
         projectDesc:
           "A small app containing different components with their documentation in React JS.",
         footerLink: [

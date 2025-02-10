@@ -3,6 +3,7 @@ import Navbar from './components/navbar/Navbar';
 import Home from './page/home/Home';
 import CursorTracker from './components/cursorTracker/CursorTracker';
 import About from './page/About';
+import Projects from './page/Projects';
 function App() {
   
 
@@ -12,6 +13,7 @@ function App() {
       <Navbar/>
       <Home/>
       <About/>
+      <Projects/>
     </>
   )
 }
