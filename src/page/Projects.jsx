@@ -3,7 +3,7 @@ import { myProjects } from "../utils/constants"
 function Projects(){
     console.log(myProjects)
     return(
-        <div className="w-full  overflow-y-scroll">
+        <div className="w-full">
             <div className="max-w-7xl mx-auto h-full flex flex-col items-center py-10">
                 <div className="w-full flex flex-col gap-3 items-center ">
                     <h3 className="text-4xl font-bold tracking-widest uppercase">{myProjects?.title}</h3>
