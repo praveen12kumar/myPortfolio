@@ -135,6 +135,7 @@ const skillsSection = {
     display: true, // Set false to hide this section, defaults to true
     projects: [
       {
+        id:0,
         image: "https://i.ibb.co/GPnsWc4/ecom1.jpg",
         projectName: "Clothverse",
         category:"Ecommerce",
@@ -153,6 +154,7 @@ const skillsSection = {
         ]
       },
       {
+        id:1,
         image:"https://i.ibb.co/mCwhBXS/socially.jpg",
         projectName: "Socially",
         category:"Social Media",
@@ -169,6 +171,7 @@ const skillsSection = {
         ]
       },
       {
+        id:2,
         image:"https://i.ibb.co/k1DVgpg/component.png",
         projectName: "CSS Component Library",
         category:"Library",
