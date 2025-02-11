@@ -66,7 +66,7 @@ const Navbar = () => {
 
   return (
     <>
-      <header ref={navbarRef} className="w-screen fixed top-0 z-50 ">
+      <header ref={navbarRef} className="w-screen fixed top-0 z-[100] ">
         <div className="w-full h-24 bg-background2 flex items-center justify-between px-4 md:px-6 lg:pl-10">
           <div className="w-1/2 md:w-1/3  flex items-center gap-3 lg:gap-4">
             <img

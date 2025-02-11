@@ -151,7 +151,8 @@ const skillsSection = {
             url: "https://github.com/praveen12kumar/Clothverse"
           }
           //  you can add extra buttons here.
-        ]
+        ],
+        tags:["nodejs","reactjs","expressjs","mongodb", "sass", "framer", "redux-toolkit", "nodemailer" ]
       },
       {
         id:1,
