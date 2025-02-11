@@ -24,7 +24,7 @@ function Projects() {
           </p>
         </div>
 
-        <div className="w-full h-full  rounded-lg mt-2 relative flex flex-col  gap-28 md:gap-12 lg:gap-10">
+        <div className="w-full h-full  rounded-lg mt-2 relative flex flex-col  gap-8 md:gap-12 lg:gap-10">
           <div className="w-[2px] hidden md:block h-full bg-sky-800 absolute left-1/2 -translate-x-1/2"></div>
           {myProjects?.projects?.map((project, index) => {
             return (
@@ -89,7 +89,7 @@ function Projects() {
                   </a>
                   
                 </div>
-                <div className="w-full md:w-1/2  h-60 flex flex-col items-start gap-3 px-8">
+                <div className="w-full md:w-1/2  h-80 flex flex-col items-start gap-3 px-8 ">
                   <div className="w-full flex flex-row items-center gap-2">
                   <h3 className="text-2xl font-source-sans-3 text-sky-900 font-semibold underline underline-offset-2 ">
                     {project?.projectName}
