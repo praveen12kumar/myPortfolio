@@ -1,13 +1,10 @@
 import './App.css'
-import Navbar from './components/navbar/Navbar';
-import Home from './page/home/Home';
 import CursorTracker from './components/cursorTracker/CursorTracker';
-import About from './page/About';
-import Projects from './page/Projects';
-import Contact from './page/Contact';
-import Footer from './components/footer/Footer';
-import {ReactLenis} from 'lenis/react';
 
+import {ReactLenis} from 'lenis/react';
+import {Routes, Route} from "react-router-dom";
+import MoreProjects from './page/MoreProjects';
+import Home from './page/home/Home';
 
 function App() {
   
@@ -16,13 +13,16 @@ function App() {
     <>
       {/* <CursorTracker/> */}
       <ReactLenis root>
-      <Navbar/>
-      <Home/>
-      <About/>
-      <Projects/>
-      <Contact/>
-      <Footer/>
+      <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/projects" element={<MoreProjects/>} />
+      </Routes>
+
+
       </ReactLenis>
+
+
+
     </>
   )
 }

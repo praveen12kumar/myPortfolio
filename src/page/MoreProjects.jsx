@@ -1,21 +1,13 @@
 import { useState } from "react";
 import { myProjects } from "../utils/constants";
-import useModal from "../hooks/useModal";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+
+function MoreProjects(){
+    const [show, setShow] = useState(null);
 
 
-function Projects() {
-  const [show, setShow] = useState(null);
-
-  const navigate = useNavigate();
-
-
-  const {isModalOpen, open, close} = useModal();
-
-
-  return (
-    <div id="Projects" className="w-full relative">
+    return(
+        <div id="Projects" className="w-full relative">
       <div className="max-w-7xl mx-auto h-full flex flex-col items-center py-10 relative">
         <div className="w-full flex flex-col gap-3 items-center ">
           <h3 className="text-4xl font-bold tracking-widest uppercase">
@@ -124,14 +116,8 @@ function Projects() {
           })}
         </div>
       </div>
-
-      <div className="cursor-pointer absolute right-0 bottom-2 -translate-x-1/2 -translate-y-1/2">
-          <button
-            className=" underline underline-offset-2 font-mulish text-sm text-sky-800 hover:text-sky-700 transition-all duration-300 ease-in-out"
-            onClick={() => navigate("/projects")}
-            >more projects...</button>  
-      </div>
     </div>
-  );
-}
-export default Projects;
+    )
+};
+
+export default MoreProjects;
