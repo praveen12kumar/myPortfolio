@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function About(){
 
     return(
-        <div className="max-w-7xl mx-auto relative">
+        <div id="About" className="max-w-7xl mx-auto relative">
             <div className="w-full h-full py-20 flex flex-col items-center gap-10">
                 <div className="flex flex-col gap-3 items-center justify-center">
                     <h3 className="text-4xl font-bold tracking-widest">ABOUT ME</h3>

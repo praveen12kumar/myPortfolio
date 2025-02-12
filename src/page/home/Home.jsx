@@ -2,11 +2,11 @@ import React from "react";
 import common from "../../assets/common.svg";
 import Button from "../../components/button/Button";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
-
+import { Link } from "react-scroll";
 
 const Home = () => {
   return (
-    <div className="w-full h-dvh relative">
+    <div id="Home" className="w-full h-dvh relative">
       <div className="w-full h-full absolute top-0 left-0 flex-center px-4">
         <div className="flex-center">
           <div className="w-full bg-background1 mx-auto -mt-10 md:mt-0 z-10 px-4">
@@ -24,7 +24,9 @@ const Home = () => {
             </div>
 
             <div className="w-full flex-center mt-20 z-50">
-                <Button text="Projects" classes={"px-16 py-3 btn bg-[#039E91] hover:bg-[#059084] flex items-center justify-center  text-white font-mulish  text-lg z-50 uppercase"} />
+                <Link to="Projects" spy={true} smooth={true} duration={1000}>
+                <Button text="Projects" classes={"px-16 py-2 btn bg-[#039E91] hover:bg-[#059084] flex items-center justify-center  text-white font-mulish  text-lg z-50 uppercase"} />
+                </Link>
             </div>
 
           </div>

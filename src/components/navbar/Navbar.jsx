@@ -6,6 +6,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Link } from "react-scroll";
 
 
 gsap.registerPlugin(TextPlugin, ScrollTrigger);
@@ -21,7 +22,7 @@ const Navbar = () => {
     gsap.timeline()
     .to("#hire", {
       text: "Resume",
-      duration: 2,
+      duration: 1,
       ease: "power1.in",
       repeat:2,
       yoyo: true
@@ -38,7 +39,7 @@ const Navbar = () => {
         from:"start"
       }
     }, "<")  
-  });
+  },[]);
 
   useGSAP(() => {
     const navbar = navbarRef.current;
@@ -61,14 +62,14 @@ const Navbar = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  });
+  },[]);
 
 
   return (
     <>
       <header ref={navbarRef} className="w-screen fixed top-0 z-[100] ">
         <div className="w-full h-24 bg-background2 flex items-center justify-between px-4 md:px-6 lg:pl-10">
-          <div className="w-1/2 md:w-1/3  flex items-center gap-3 lg:gap-4">
+          <div id="Home" className="w-1/2 md:w-1/3  flex items-center gap-3 lg:gap-4 cursor-pointer">
             <img
               src={me}
               alt="profile-image"
@@ -82,18 +83,22 @@ const Navbar = () => {
           <div className="w-1/4 md:w-2/3 flex items-center justify-center gap-2 ">
             <div className="hidden md:block  ">
               {nav.map((item, index) => (
-                <li key={index} className="tracking-wide ml-10 lg:ml-20  nav-hover-btn">
+                <Link to={item} spy={true} smooth={true} duration={800} key={index}>
+                  <li className="tracking-wide ml-10 lg:ml-20  nav-hover-btn">
                   {item}
                 </li>
+                </Link>
               ))}
             </div>
 
             <div className=" lg:w-1/4  flex items-center justify-evenly gap-2">
             <div className="hidden lg:block cursor-pointer">
               {/* Attach ref to the button */}
-              <div id="hire" className="w-20 h-9 bg-blue text-sm font-general text-white text-center px-4 py-2 rounded-md"
+              <a href="https://drive.google.com/file/d/1T3gkP1KMlCyZmW0g4B8iTDugE89IlSp1/view?usp=drive_link" target="_blank" download>
+              <button id="hire" className="w-20 h-9 bg-blue text-sm font-general text-white text-center px-4 py-2 rounded-md"
               />
-              </div>
+              </a>
+            </div>
 
             <div
               className="md:hidden"

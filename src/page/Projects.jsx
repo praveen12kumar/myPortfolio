@@ -12,7 +12,7 @@ function Projects() {
 
 
   return (
-    <div className="w-full">
+    <div id="Projects" className="w-full">
       <div className="max-w-7xl mx-auto h-full flex flex-col items-center py-10 relative">
         <div className="w-full flex flex-col gap-3 items-center ">
           <h3 className="text-4xl font-bold tracking-widest uppercase">

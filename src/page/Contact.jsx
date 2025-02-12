@@ -6,7 +6,7 @@ import { MdEmail } from "react-icons/md";
 import { FaMessage } from "react-icons/fa6";
 import { IoIosSend } from "react-icons/io";
 import { useState } from "react";
-import Button from "../components/button/Button";
+
 
 function Contact() {
   const [formValues, setFormValues] = useState({
@@ -24,7 +24,7 @@ function Contact() {
   }
 
   return (
-    <div className="w-full  bg-slate flex items-center justify-center">
+    <div id="Contact" className="w-full  bg-slate flex items-center justify-center">
       <div className="max-w-7xl h-full mx-auto flex flex-col items-center py-10">
         <div className="w-full flex flex-col gap-3 items-center p-4">
           <h3 className="text-4xl font-bold tracking-widest uppercase">
