@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-
+import { Link } from "react-scroll";
 function About(){
 
     return(
@@ -8,7 +7,7 @@ function About(){
                 <div className="flex flex-col gap-3 items-center justify-center">
                     <h3 className="text-4xl font-bold tracking-widest">ABOUT ME</h3>
                     <div className="w-20 h-1 bg-sky-700 rounded-lg"></div>
-                    <p className="max-w-4xl px-4 text-center  text-gray-700 text-md md:text-lg  mt-6 font-zentry mx-auto">Here you will find more information about me, What I do, and my current skills mostly in terms of programming and technology</p>
+                    <p className="max-w-4xl px-4 text-center  text-gray-700 text-md md:text-lg  mt-6 font-mulish mx-auto">Here you will find more information about me, What I do, and my current skills mostly in terms of programming and technology</p>
                 </div>
                 <div className="w-full flex flex-col lg:flex-row items-start justify-between gap-10 px-4">
                     <div className="w-full lg:w-1/2 flex flex-col items-start gap-6">
@@ -18,7 +17,9 @@ function About(){
                         <p>I also like sharing content related to the stuff that I have learned over the years in Web Development so it can help other people in the Dev Community. Feel free to connect or follow me on my <a href="https://www.linkedin.com/in/praveen-shakya-3a1b4123b/" className="text-sky-800 font-bold">LinkedIn</a>.</p>
                         <p>I'm open to job opportunities where I can contribute, learn, and grow. If you have a good opportunity that matches my skills and experience, then don't hesitate to <b>contact</b> me.</p>
                     </div>
-                    <button className="btn btn-wide text-lg text-white font-zentry tracking-wide btn-info cursor-pointer z-50">Contact</button>
+                    <Link to="Contact" smooth={true} duration={800}>
+                    <button className="btn btn-wide text-lg text-white font-zentry tracking-wide bg-sky-800 hover:bg-sky-700 transition-all duration-300 ease-in-out cursor-pointer z-50">Contact</button>
+                    </Link>
                     </div>
                     <div className="w-full lg:w-1/2 flex flex-col items-start gap-6 z-50">
                         <div className="text-xl md:text-2xl font-bold font-circular-web text-zinc-800">My Skills</div>

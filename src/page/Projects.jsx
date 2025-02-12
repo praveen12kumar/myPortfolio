@@ -19,7 +19,7 @@ function Projects() {
             {myProjects?.title}
           </h3>
           <div className="w-20 h-1 bg-sky-700 rounded-lg"></div>
-          <p className="px-4 text-center  text-gray-700 text-md md:text-lg  mt-4 font-zentry mx-auto">
+          <p className="px-4 text-center  text-gray-700 text-md md:text-lg  mt-4 font-mulish mx-auto">
             Here you will find some of the projects that I have worked on.
           </p>
         </div>
@@ -107,14 +107,13 @@ function Projects() {
                     }
                   </div>
 
-                  <div className="w-full flex flex-row items-center gap-4">
-                    <a  className="bg-sky-800 hover:bg-sky-700 transition-all duration-300 ease-in-out text-white px-4 py-1 rounded-2xl flex items-center gap-2"
+                  <div className="w-full flex flex-row items-center gap-4 text-white  ">
+                    <a  className="w-32 bg-sky-800 hover:bg-sky-700 transition-all duration-300 ease-in-out font-roboto px-4 py-1 rounded-2xl flex items-center justify-center gap-2 "
                         href={project?.footerLink[1]?.url} ><FaGithub className="w-4 h-4 "/>
-                        
                         Github</a>
                     
-                    <a className="w-40 bg-orange-800 hover:bg-orange-700 transition-all duration-300 ease-in-out text-white px-4 py-1 rounded-2xl flex items-center justify-start gap-2 truncate text-ellipsis"
-                    href={project?.footerLink[1]?.url} ><FaExternalLinkAlt className="w-4 h-4 "/>{project?.projectName}</a>
+                    <a className="w-32 bg-orange-800 hover:bg-orange-700 transition-all duration-300 ease-in-out font-roboto  text-white px-4 py-1 rounded-2xl flex items-center justify-center gap-2 truncate text-ellipsis"
+                    href={project?.footerLink[1]?.url} ><FaExternalLinkAlt className="w-3 h-3 "/>Live</a>
                   </div>
 
                 </div>

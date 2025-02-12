@@ -1,17 +1,44 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import common from "../../assets/common.svg";
 import Button from "../../components/button/Button";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import { Link } from "react-scroll";
+import gsap from "gsap";
+import { TextPlugin } from "gsap/TextPlugin";
+
+gsap.registerPlugin(TextPlugin);
 
 const Home = () => {
+
+
+  const textRef = useRef(null);
+
+  useEffect(()=>{
+    gsap.to(textRef.current, {
+      text: "HEY, I'M PRAVEEN KUMAR",
+      duration:3,
+      ease:"power1.out",
+      onUpdate: () => {
+        if (textRef.current) {
+          let text = textRef.current.innerHTML;
+          textRef.current.innerHTML = text.replace(
+            "M",
+            `<span class="text-sky-800">M</span>`
+          );
+        }
+      }
+    })
+  },[]);
+
+
+
   return (
     <div id="Home" className="w-full h-dvh relative">
       <div className="w-full h-full absolute top-0 left-0 flex-center px-4">
         <div className="flex-center">
           <div className="w-full bg-background1 mx-auto -mt-10 md:mt-0 z-10 px-4">
-            <h1 className="text-[24px] md:text-6xl tracking-wide text-center font-circular-web uppercase font-extrabold text-black ">
-              hey, I'<span className="text-blue">M</span> Praveen Kumar
+            <h1 className="text-[24px] md:text-6xl tracking-wide text-center font-mulish uppercase font-extrabold text-black ">
+              <span ref={textRef} className=""></span>
             </h1>
             <div className="w-full  mt-10 md:mt-14 flex flex-col gap-3 md:gap-5">
               <p className="w-full text-sm md:text-xl text-center">
