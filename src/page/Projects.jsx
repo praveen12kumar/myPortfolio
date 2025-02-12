@@ -28,7 +28,7 @@ function Projects() {
           <div className="w-[2px] hidden md:block h-full bg-sky-800 absolute left-1/2 -translate-x-1/2"></div>
           {myProjects?.projects?.map((project, index) => {
             return (
-              <div
+              <div key={project?.id}
                 className={`w-full  flex flex-col  items-center justify-between ${
                   index % 2 !== 1 ? "md:flex-row" : "md:flex-row-reverse"
                 }`}

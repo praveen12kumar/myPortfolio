@@ -41,9 +41,8 @@ function Contact() {
           </div>
           <div className="w-full h-full md:w-1/2 flex items-center  justify-center">
             <form
-              action=""
-              name="contactUS"
-              netlify
+              action="https://getform.io/f/aejrymjb"
+              method="POST"
               className="w-4/5 h-full flex flex-col items-center justify-center"
             >
               <div className="w-full md:w-2/3 h-24 flex flex-col items-start gap-1">
@@ -94,6 +93,7 @@ function Contact() {
                   id="message"
                   cols={30}
                   rows={20}
+                  placeholder="Hi,"
                   value={formValues.message}
                   onChange={handleChangeInput}
                   className="w-full px-2 pt-2 bg-transparent cursor-pointer border border-gray-400 rounded-lg outline-none resize-none"

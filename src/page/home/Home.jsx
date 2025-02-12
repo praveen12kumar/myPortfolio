@@ -24,7 +24,7 @@ const Home = () => {
             </div>
 
             <div className="w-full flex-center mt-20 z-50">
-                <Button text="Projects" classes={"px-16 py-3 btn bg-[#039E91] hover:bg-[#059084]  text-white font-mulish  text-lg z-50 uppercase"} />
+                <Button text="Projects" classes={"px-16 py-3 btn bg-[#039E91] hover:bg-[#059084] flex items-center justify-center  text-white font-mulish  text-lg z-50 uppercase"} />
             </div>
 
           </div>
