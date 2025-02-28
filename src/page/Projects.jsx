@@ -112,11 +112,15 @@ function Projects() {
 
                   <div className="w-full flex flex-row items-center gap-4 text-white  ">
                     <a  className="w-32 bg-sky-800 hover:bg-sky-700 transition-all duration-300 ease-in-out font-roboto px-4 py-1 rounded-2xl flex items-center justify-center gap-2 "
-                        href={project?.footerLink[1]?.url} ><FaGithub className="w-4 h-4 "/>
+                        href={project?.footerLink[0]?.url} 
+                        target="_blank"
+                        ><FaGithub className="w-4 h-4 "/>
                         Github</a>
                     
                     <a className="w-32 bg-orange-800 hover:bg-orange-700 transition-all duration-300 ease-in-out font-roboto  text-white px-4 py-1 rounded-2xl flex items-center justify-center gap-2 truncate text-ellipsis"
-                    href={project?.footerLink[1]?.url} ><FaExternalLinkAlt className="w-3 h-3 "/>Live</a>
+                      href={project?.footerLink[1]?.url} 
+                      target="_blank"
+                    ><FaExternalLinkAlt className="w-3 h-3 "/>Live</a>
                   </div>
                 </div>
               </div>

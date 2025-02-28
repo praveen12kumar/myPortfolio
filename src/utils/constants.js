@@ -131,11 +131,30 @@ const skillsSection = {
   const myProjects = {
     title: "Projects",
     description:"Here you will find some of the projects that I have worked on.",
-    seemore:"Want to see more Click here",
     display: true, // Set false to hide this section, defaults to true
     projects: [
       {
         id:0,
+        image: "https://i.ibb.co/GQzgGDMn/spotify.png",
+        projectName: "Spotify Clone",
+        category:"Music Player",
+        projectDesc:"A full-stack application for managing songs and albums, featuring admin controls for adding, deleting, and organizing music collections. Built with React(Vite), Redux Toolkit, Node.js (Express), and MongoDB, ensuring a scalable and high-performance experience. Optimized with lazy loading, caching, and efficient API handling to enhance speed and performance.",
+
+         footerLink: [
+          {
+            name: "Visit Website",
+            url: "https://github.com/praveen12kumar/spotify-app"
+          },
+          {
+            name: "Live",
+            url: "https://spotify-app-pkha.onrender.com/"
+          }
+          //  you can add extra buttons here.
+        ],
+        tags:["nodejs","reactjs","expressjs","mongodb", "tailwind","redux-toolkit", "react-howler", "react-icons", "nodemailer", "passport-js" ]
+      },
+      {
+        id:1,
         image: "https://i.ibb.co/GPnsWc4/ecom1.jpg",
         projectName: "Clothverse",
         category:"Ecommerce",
@@ -155,7 +174,7 @@ const skillsSection = {
         tags:["nodejs","reactjs","expressjs","mongodb", "sass", "framer", "redux-toolkit", "nodemailer" ]
       },
       {
-        id:1,
+        id:2,
         image:"https://i.ibb.co/mCwhBXS/socially.jpg",
         projectName: "Socially",
         category:"Social Media",
@@ -172,7 +191,7 @@ const skillsSection = {
         ]
       },
       {
-        id:2,
+        id:3,
         image:"https://i.ibb.co/k1DVgpg/component.png",
         projectName: "CSS Component Library",
         category:"Library",
