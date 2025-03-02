@@ -34,7 +34,7 @@ function MoreProjects(){
                   className={`w-full md:w-1/2 h-72  p-4 flex flex-col items-center justify-center relative`}
                 >
                   <img
-                    src={project?.image} lazy
+                    src={project?.image} lazy="true"
                     alt="project-image"
                     className={`w-full md:w-2/3 h-full shadow-lg rounded-lg cursor-pointer ${
                       show === index ? "md:scale-110" : ""

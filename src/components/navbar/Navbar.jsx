@@ -94,7 +94,7 @@ const Navbar = () => {
             <div className=" lg:w-1/4  flex items-center justify-evenly gap-2">
             <div className="hidden lg:block cursor-pointer">
               {/* Attach ref to the button */}
-              <a href="https://drive.google.com/file/d/1T3gkP1KMlCyZmW0g4B8iTDugE89IlSp1/view?usp=drive_link" target="_blank" download>
+              <a href="https://drive.google.com/file/d/10sTPyvdZ7t7h061lXuRU8O5Y_-S5zJjf/view?usp=drive_link" target="_blank" download>
               <button id="hire" className="w-20 h-9 bg-blue text-sm font-general text-white text-center px-4 py-2 rounded-md"
               />
               </a>
