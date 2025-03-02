@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { myProjects } from "../utils/constants";
+import { moreProjects } from "../utils/constants";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 function MoreProjects(){
@@ -11,7 +11,7 @@ function MoreProjects(){
       <div className="max-w-7xl mx-auto h-full flex flex-col items-center py-10 relative">
         <div className="w-full flex flex-col gap-3 items-center ">
           <h3 className="text-4xl font-bold tracking-widest uppercase">
-            {myProjects?.title}
+            {moreProjects?.title}
           </h3>
           <div className="w-20 h-1 bg-sky-700 rounded-lg"></div>
           <p className="px-4 text-center  text-gray-700 text-md md:text-lg  mt-4 font-mulish mx-auto">
@@ -21,7 +21,7 @@ function MoreProjects(){
 
         <div className="w-full h-full  rounded-lg mt-2 relative flex flex-col  gap-8 md:gap-12 lg:gap-10">
           <div className="w-[2px] hidden md:block h-full bg-sky-800 absolute left-1/2 -translate-x-1/2"></div>
-          {myProjects?.projects?.map((project, index) => {
+          {moreProjects?.projects?.map((project, index) => {
             return (
               <div key={project?.id}
                 className={`w-full  flex flex-col  items-center justify-between ${
@@ -93,7 +93,7 @@ function MoreProjects(){
                     ({project?.category})
                   </h5>
                   </div>
-                  <p className="text-sm font-roboto leading-6 line-clamp-5">
+                  <p className="text-sm font-roboto leading-6 ">
                     {project.projectDesc}
                   </p>
                   <div className="w-full flex flex-wrap gap-2">

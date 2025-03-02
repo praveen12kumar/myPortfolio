@@ -32,7 +32,7 @@ function Projects() {
           {myProjects?.projects?.map((project, index) => {
             return (
               <div key={project?.id}
-                className={`w-full  flex flex-col  items-center justify-between ${
+                className={`w-full  flex flex-col  items-center justify-between my-5 ${
                   index % 2 !== 1 ? "md:flex-row" : "md:flex-row-reverse"
                 }`}
               >
@@ -101,7 +101,7 @@ function Projects() {
                     ({project?.category})
                   </h5>
                   </div>
-                  <p className="text-sm font-roboto leading-6 line-clamp-5">
+                  <p className="text-sm font-roboto leading-6 ">
                     {project.projectDesc}
                   </p>
                   <div className="w-full flex flex-wrap gap-2">
