@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { myProjects } from "../utils/constants";
-import useModal from "../hooks/useModal";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
@@ -9,9 +8,6 @@ function Projects() {
   const [show, setShow] = useState(null);
 
   const navigate = useNavigate();
-
-
-  const {isModalOpen, open, close} = useModal();
 
 
   return (
@@ -32,7 +28,7 @@ function Projects() {
           {myProjects?.projects?.map((project, index) => {
             return (
               <div key={project?.id}
-                className={`w-full  flex flex-col  items-center justify-between my-5 ${
+                className={`w-full  flex flex-col  items-center justify-between my-10 ${
                   index % 2 !== 1 ? "md:flex-row" : "md:flex-row-reverse"
                 }`}
               >
@@ -42,7 +38,7 @@ function Projects() {
                   className={`w-full md:w-1/2 h-72  p-4 flex flex-col items-center justify-center relative`}
                 >
                   <img
-                    src={project?.image}
+                    src={project?.image} lazy
                     alt="project-image"
                     className={`w-full md:w-2/3 h-full shadow-lg rounded-lg cursor-pointer ${
                       show === index ? "md:scale-110" : ""
@@ -101,7 +97,7 @@ function Projects() {
                     ({project?.category})
                   </h5>
                   </div>
-                  <p className="text-sm font-roboto leading-6 ">
+                  <p className="text-sm font-roboto leading-6 line-clamp-6 md:line-clamp-none">
                     {project.projectDesc}
                   </p>
                   <div className="w-full flex flex-wrap gap-2">

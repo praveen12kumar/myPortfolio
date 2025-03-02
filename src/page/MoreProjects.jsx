@@ -24,7 +24,7 @@ function MoreProjects(){
           {moreProjects?.projects?.map((project, index) => {
             return (
               <div key={project?.id}
-                className={`w-full  flex flex-col  items-center justify-between ${
+                className={`w-full  flex flex-col  items-center justify-between my-19 ${
                   index % 2 !== 1 ? "md:flex-row" : "md:flex-row-reverse"
                 }`}
               >
@@ -34,7 +34,7 @@ function MoreProjects(){
                   className={`w-full md:w-1/2 h-72  p-4 flex flex-col items-center justify-center relative`}
                 >
                   <img
-                    src={project?.image}
+                    src={project?.image} lazy
                     alt="project-image"
                     className={`w-full md:w-2/3 h-full shadow-lg rounded-lg cursor-pointer ${
                       show === index ? "md:scale-110" : ""
@@ -93,7 +93,7 @@ function MoreProjects(){
                     ({project?.category})
                   </h5>
                   </div>
-                  <p className="text-sm font-roboto leading-6 ">
+                  <p className="text-sm font-roboto leading-6  line-clamp-[10]">
                     {project.projectDesc}
                   </p>
                   <div className="w-full flex flex-wrap gap-2">
