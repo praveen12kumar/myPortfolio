@@ -16,8 +16,9 @@ const greeting = {
     username: "Praveen Kumar",
     title: "Hi all, I'm Praveen",
     subTitle:  "Enthusiastic and dedicated web developer with a strong foundation in the MERN (MongoDB, Express, React NodeJs) stack, seeking an entry-level position to contribute my skills and passion for creating innovative web applications. With a solid academic background and hands-on experience through various projects.",
-    resumeLink:"https://drive.google.com/file/d/1o_BT16i_dZ9jdJ9g9LaCIuYsip2D-Q_f/view?usp=sharing"
-};
+    resume:"https://drive.google.com/file/d/1FKfAdjoW-GhYXDoeX6QhFpAXdhnOTAgi/view",
+  };
+
 
 const socialMediaLinks = [
   {
