@@ -1,51 +1,130 @@
+import { useRef } from "react";
 import { Link } from "react-scroll";
-function About(){
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+import SectionLabel from "../components/sectionLabel/SectionLabel";
 
-    return(
-        <div id="About" className="max-w-7xl mx-auto relative">
-            <div className="w-full h-full py-20 flex flex-col items-center gap-10">
-                <div className="flex flex-col gap-3 items-center justify-center">
-                    <h3 className="text-4xl font-bold tracking-widest">ABOUT ME</h3>
-                    <div className="w-20 h-1 bg-sky-700 rounded-lg"></div>
-                    <p className="max-w-4xl px-4 text-center  text-gray-700 text-md md:text-lg  mt-6 font-mulish mx-auto">Here you will find more information about me, What I do, and my current skills mostly in terms of programming and technology</p>
-                </div>
-                <div className="w-full flex flex-col lg:flex-row items-start justify-between gap-10 px-4">
-                    <div className="w-full lg:w-1/2 flex flex-col items-start gap-6">
-                        <h3 className="text-xl md:text-2xl font-bold font-circular-web">Get to know me!</h3>
-                        <div className="text-sm leading-6 md:text-base md:leading-8 font-source-sans-3 text-gray-700 tracking-wide">
-                        <p>I'm a Frontend Focused Web Developer building and managing Websites and Web Applications that lead to the success of the overall product. Check out some of my work in the Projects section.</p>
-                        <p>I also like sharing content related to the stuff that I have learned over the years in Web Development so it can help other people in the Dev Community. Feel free to connect or follow me on my <a href="https://www.linkedin.com/in/praveen-shakya-3a1b4123b/" className="text-sky-800 font-bold">LinkedIn</a>.</p>
-                        <p>I'm open to job opportunities where I can contribute, learn, and grow. If you have a good opportunity that matches my skills and experience, then don't hesitate to <b>contact</b> me.</p>
-                    </div>
-                    <Link to="Contact" smooth={true} duration={800}>
-                    <button className="btn btn-wide text-lg text-white font-zentry tracking-wide bg-sky-800 hover:bg-sky-700 transition-all duration-300 ease-in-out cursor-pointer z-50">Contact</button>
-                    </Link>
-                    </div>
-                    <div className="w-full lg:w-1/2 flex flex-col items-start gap-6 z-50">
-                        <div className="text-xl md:text-2xl font-bold font-circular-web text-zinc-800">My Skills</div>
-                        <div className="w-full flex flex-wrap items-start gap-5 md:gap-6 lg:gap-8">
-                        <button className="btn btn-outline cursor-text">C</button>
-                        <button className="btn btn-outline cursor-text">C++</button>
-                        <button className="btn btn-outline cursor-text">HTML</button>
-                        <button className="btn btn-outline cursor-text">CSS</button>
-                        <button className="btn btn-outline cursor-text">JavaScript</button>
-                        <button className="btn btn-outline cursor-text">React</button>
-                        <button className="btn btn-outline cursor-text">Node</button>
-                        <button className="btn btn-outline cursor-text">Express</button>
-                        <button className="btn btn-outline cursor-text">MongoDB</button>
-                        <button className="btn btn-outline cursor-text">TypeScript</button>
-                        <button className="btn btn-outline cursor-text">NextJs</button>
-                        <button className="btn btn-outline cursor-text">Git</button>
-                        <button className="btn btn-outline cursor-text">GitHub</button>
-                        <button className="btn btn-outline cursor-text">Redux Toolkit</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
+gsap.registerPlugin(ScrollTrigger);
+
+function About() {
+  const sectionRef = useRef(null);
+  const headingRef = useRef(null);
+  const bioRef = useRef(null);
+
+  useGSAP(
+    () => {
+      const ctx = gsap.context(() => {
+        // Section heading slide-up
+        gsap.fromTo(
+          headingRef.current,
+          { y: 40, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: "top 80%",
+              toggleActions: "play none none none",
+            },
+          }
+        );
+
+        // Bio block slide-up
+        gsap.fromTo(
+          bioRef.current,
+          { y: 50, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.9,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: bioRef.current,
+              start: "top 85%",
+              toggleActions: "play none none none",
+            },
+          }
+        );
+      }, sectionRef);
+
+      return () => ctx.revert();
+    },
+    { scope: sectionRef }
+  );
+
+  return (
+    <div id="About" ref={sectionRef} className="max-w-7xl mx-auto relative px-4 md:px-6">
+      <div className="w-full py-24 md:py-32 flex flex-col items-center gap-14">
+        {/* ─── Section Heading ─── */}
+        <div ref={headingRef} className="flex flex-col gap-4 items-center text-center">
+          <SectionLabel>About Me</SectionLabel>
+          <h2 className="text-3xl md:text-5xl font-display uppercase tracking-tight text-gray-100">
+            Get to know{" "}
+            <span className="gradient-text">who I am</span>
+          </h2>
+          <div className="accent-bar mt-1"></div>
+          <p className="max-w-2xl text-gray-400 text-sm md:text-base mt-2 font-mulish leading-relaxed">
+            A glimpse into my journey, interests, and the technologies I work with every day.
+          </p>
         </div>
-    )
-    
-};
+
+        {/* ─── Bio ─── */}
+        <div ref={bioRef} className="w-full max-w-5xl flex flex-col items-center gap-6 text-center">
+          <div className="text-sm leading-7 md:text-base md:leading-8 font-source-sans-3 text-gray-300 tracking-wide space-y-5">
+            <p>
+              I&apos;m a <strong className="text-gray-100">Full-Stack Developer</strong> with
+              hands-on experience building scalable MERN applications and teaching 100+ students
+              industry-relevant software engineering skills. I&apos;m strong in{" "}
+              <strong className="text-gray-100">REST API design</strong>,{" "}
+              <strong className="text-gray-100">state management</strong>, and{" "}
+              performance optimization, with a proven ability to bridge theory and real-world
+              implementation.
+            </p>
+            <p>
+              Beyond coding, I&apos;m currently expanding into{" "}
+              <strong className="text-gray-100">Generative AI</strong> and{" "}
+              <strong className="text-gray-100">backend system design</strong>,
+              exploring how modern systems work — from databases and distributed systems to
+              application architecture and performance optimization. I&apos;m always looking for
+              opportunities to build impactful products and grow as an engineer.
+            </p>
+            <p>
+              I&apos;m open to job opportunities where I can contribute, learn, and grow. If you
+              have a good opportunity that matches my skills and experience, don&apos;t hesitate
+              to{" "}
+              <Link
+                to="Contact"
+                smooth={true}
+                duration={800}
+                className="text-accent font-semibold cursor-pointer hover:underline decoration-accent/50 underline-offset-2"
+              >
+                contact me
+              </Link>
+              . Feel free to connect on{" "}
+              <a
+                href="https://www.linkedin.com/in/praveen-shakya-3a1b4123b/"
+                className="text-accent font-semibold hover:underline decoration-accent/50 underline-offset-2"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn
+              </a>
+              .
+            </p>
+          </div>
+
+          <Link to="Contact" smooth={true} duration={800}>
+            <button className="btn-gradient mt-2 cursor-pointer">
+              Let&apos;s Connect
+            </button>
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default About;

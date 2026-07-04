@@ -1,24 +1,26 @@
+import { motion } from "framer-motion";
+import SocialMedia from "../socialMedia/SocialMedia";
 
-import { socialMediaLinks } from "../../utils/constants";
-function Footer(){
-    const year = new Date().getFullYear();
-    
-    return(
-        <div className="w-full h-90 flex flex-col items-center gap-10 py-10">
-            <p className="font-source-sans-3 flex items-center gap-4">Praveen Kumar <span className="text-lg">©</span> {year}</p>
-            <div className="w-1/3  md:w-1/4 flex flex-row items-center justify-center gap-2 md:gap-0">
-            {
-                socialMediaLinks?.map((link, index)=>{
-                    return(
-                        <a href={link.href} key={index} target="_blank" rel='noopener noreferrer' className="w-full h-full cursor-pointer flex items-center justify-center">
-                            <link.icon className='w-4 h-4 md:w-6 md:h-6 text-blue  hover:scale-125 hover:transition-all duration-300' />
-                        </a>
-                    )
-                })
-            }
-            </div>
-        </div>
-    )
-};
+function Footer() {
+  const year = new Date().getFullYear();
+
+  return (
+    <motion.footer
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="w-full border-t border-white/10"
+    >
+      <div className="max-w-7xl mx-auto flex flex-col items-center gap-6 py-12 px-4">
+        <SocialMedia className="flex-row" iconClassName="w-5 h-5 md:w-6 md:h-6" />
+        <div className="accent-bar" />
+        <p className="text-sm font-source-sans-3 text-gray-500">
+          &copy; {year} Praveen Kumar. All rights reserved.
+        </p>
+      </div>
+    </motion.footer>
+  );
+}
 
 export default Footer;

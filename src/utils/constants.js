@@ -5,10 +5,9 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";
-import { title } from "framer-motion/client";
 
 
-const nav = ["Home", "About", "Projects", "Contact"]
+const nav = ["Home", "About", "Stack", "Experience", "Projects", "Contact"]
 
 
 
@@ -115,14 +114,26 @@ const skillsSection = {
     display: true, //Set it to true to show workExperiences Section
     experiences: [
       {
-        role: "Web Development Student",
-        company: "neoG Camp",
-        companylogo: "https://i.ibb.co/T0dk7nJ/neog.png",
-        date: "Feb 2023 – Present",
-        desc: "A part of web development (MERN stack) bootcamp",
+        role: "Software Developer Instructor",
+        company: "NxtWave Disruptive Technologies",
+        date: "Nov 2025 – Present",
+        desc: "Delivering full-stack MERN and Python training to 100+ students.",
         descBullets: [
-          "Made major projects like e-commerce, social media using ReactJS.",
-          "Learnt various technologies like HTML, CSS, JavaScript, React, NodeJS, MongoDB, ExpressJS, TypeScript and Redux."
+          "Delivered full-stack MERN and Python training to 100+ students with over 90% satisfaction.",
+          "Designed real-world projects aligned with hiring standards (CRUD apps, REST APIs, authentication systems).",
+          "Conducted deep-dive sessions on JavaScript internals, API design, and database modeling.",
+          "Reduced curriculum delivery time by 30% via modular content structuring."
+        ]
+      },
+      {
+        role: "Full-Stack Developer Trainee",
+        company: "Neog Camp (Remote)",
+        date: "Feb 2023 – Feb 2024",
+        desc: "Built and deployed full-stack MERN applications during an intensive developer training program.",
+        descBullets: [
+          "Built and deployed 3 full-stack MERN applications with authentication and state management.",
+          "Applied Redux Toolkit for scalable state handling across complex UI flows.",
+          "Practiced agile workflows, code reviews, and production deployment strategies."
         ]
       },
     ]
@@ -292,7 +303,7 @@ export const moreProjects = {
           url:"https://pika-pika-pikachu.netlify.app/"
         }
       ],
-      tags:["ReactJs","tailwind",,"tanstack/react-query","axios","chart.js","react-icons","react-redux"] 
+      tags:["ReactJs","tailwind","tanstack/react-query","axios","chart.js","react-icons","react-redux"]
     },
     {
       id:5,
@@ -310,7 +321,25 @@ export const moreProjects = {
           url:"https://ochi1-design.netlify.app/"
         }
       ],
-      tags:["ReactJs","Javascript", "tailwind", "gsap", "react-icons", ] 
+      tags:["ReactJs","Javascript", "tailwind", "gsap", "react-icons", ]
+    },
+    {
+      id:6,
+      image:"/images/portfolio-preview.png",
+      projectName: "Portfolio Website",
+      category:"Personal Site",
+      projectDesc:"Designed and developed this responsive portfolio website using React to showcase my personal projects and skills, featuring an intuitive, user-friendly interface. Built a mobile-first UI with optimized routing, and animated with GSAP and Framer Motion. Optimized for performance and accessibility, ensuring cross-browser compatibility, fast load times, and mobile responsiveness, following modern web development best practices.",
+      footerLink: [
+        {
+          name:"github",
+          url:"https://github.com/praveen12kumar/myPortfolio"
+        },
+        {
+          name:"live",
+          url:"https://praveen1-1portfolio.netlify.app/"
+        }
+      ],
+      tags:["reactjs","vite","tailwind","gsap","framer-motion","react-router-dom","responsive-design"]
     },
   ]
 }

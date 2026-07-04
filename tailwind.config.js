@@ -1,11 +1,10 @@
-import { li } from 'framer-motion/client';
-
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily:{
@@ -18,21 +17,25 @@ export default {
         'roboto': ['roboto', 'sans-serif'],
         'mulish': ['mulish', 'sans-serif'],
         'source-sans-3': ['source-sans-3', 'sans-serif'],
+        display: ['Anton', 'sans-serif'],
       },
       colors: {
-          light:'ECDFCC',
-          dark:'1E201E',
+          light:'#ECDFCC',
+          dark:'#1E201E',
           blue:'#3340AF',
           slate:'#E7E7E7',
           darkSlate:'rgb(15 23 42)',
           background1:'#FAFAFA',
           background2:'#FFFFFF',
+          ink: '#0a0a0c',
+          surface: '#141417',
+          accent: '#22d3ee',
+          'accent-dark': '#0891b2',
       },
-      daisyui:{
-        themes:['light']
-      }
-      
     },
+  },
+  daisyui:{
+    themes:['light']
   },
   plugins: [
     function ({ addUtilities }) {

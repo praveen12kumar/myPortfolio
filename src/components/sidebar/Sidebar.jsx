@@ -1,81 +1,99 @@
-import React, { useRef } from "react";
+import { useEffect } from "react";
+import { motion } from "framer-motion";
 import { nav } from "../../utils/constants";
 import { RxCross1 } from "react-icons/rx";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
+import { Link } from "react-scroll";
+
+const backdropVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+};
+
+const panelVariants = {
+  hidden: { x: "100%" },
+  visible: {
+    x: 0,
+    transition: { type: "spring", stiffness: 320, damping: 32 },
+  },
+  exit: { x: "100%", transition: { duration: 0.3, ease: "easeIn" } },
+};
+
+const listVariants = {
+  visible: { transition: { staggerChildren: 0.07, delayChildren: 0.15 } },
+};
+
+const itemVariants = {
+  hidden: { x: 40, opacity: 0 },
+  visible: { x: 0, opacity: 1, transition: { duration: 0.4, ease: "easeOut" } },
+};
 
 const Sidebar = ({ setOpen }) => {
-  const textRef = useRef([]); // Array of refs for each text
-  const timeLines = useRef([]); // Array of timelines for hover animations
-
-  useGSAP(() => {
-    // Entry animation for all items
-    gsap.to("li", {
-      backgroundImage: "linear-gradient(90deg, white 0%, white 100%, #696c75 100%)",
-      stagger:{
-          each:0.1,
-          ease:"power2.out"
-      },
-      duration:1,
-  })
-  });
-
-  useGSAP(() => {
-    // Individual hover animations
-    timeLines.current = textRef.current.map((text) =>
-      gsap.timeline({ paused: true }).to(text, {
-        color: "#1A2746",
-        x: 10,
-        scale: 1.3,
-        duration: 0.3,
-        ease: "power1.out",
-        willChange: "transform",
-      })
-    );
-  });
-
-  // Handle mouse events for hover animations
-  const handleMouseEnter = (index) => {
-    timeLines.current[index].play();
-  };
-  const handleMouseLeave = (index) => {
-    timeLines.current[index].reverse();
-  };
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [setOpen]);
 
   return (
-    <div
-      onClick={() => setOpen(false)}
-      id="sidebar"
-      className="w-screen h-[70vh] bg-darkSlate absolute top-0 left-0 rounded-b-3xl "
-    >
-      <div className="w-full h-full relative flex flex-col">
-        {/* Close Button */}
-        <div className="absolute top-6 right-10" onClick={() => setOpen(false)}>
-          <RxCross1 className="text-2xl text-white cursor-pointer" />
+    <>
+      <motion.div
+        variants={backdropVariants}
+        initial="hidden"
+        animate="visible"
+        exit="hidden"
+        onClick={() => setOpen(false)}
+        className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[110]"
+      />
+      <motion.div
+        variants={panelVariants}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+        className="fixed top-0 right-0 h-dvh w-[80%] max-w-sm bg-surface/95 backdrop-blur-xl border-l border-white/10 shadow-2xl z-[120] flex flex-col"
+      >
+        <div className="flex justify-end p-6">
+          <button
+            onClick={() => setOpen(false)}
+            aria-label="Close menu"
+            className="p-2 rounded-full text-gray-300 hover:bg-white/10 transition-colors duration-300"
+          >
+            <RxCross1 className="text-xl" />
+          </button>
         </div>
 
-        {/* Sidebar Content */}
-        <div className="w-full h-full flex items-center px-10">
-        <ul className='flex flex-col items-start gap-6 list-none'>
-               {
-                 nav.map((item, index) => (
-                   <li ref={(el) => (textRef.current[index] = el)} key={index} className="text-[8vw] md:text-[4vw] min-w-fit font-circular-web font-bold cursor-pointer uppercase relative "
-                   style={{
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                     backgroundImage: "linear-gradient(90deg, white 0%, white 0%, #696c75 0%)"
-                  }}
-                  onMouseEnter={()=>handleMouseEnter(index)}
-                  onMouseLeave={()=>handleMouseLeave(index)}
-                   > 
-                     {item}
-                   </li>
-                 ))
-               } 
-            </ul>
+        <motion.ul
+          variants={listVariants}
+          initial="hidden"
+          animate="visible"
+          className="flex flex-col gap-1 px-8 mt-6 list-none"
+        >
+          {nav.map((item) => (
+            <motion.li key={item} variants={itemVariants}>
+              <Link
+                to={item}
+                spy={true}
+                smooth={true}
+                duration={600}
+                onClick={() => setOpen(false)}
+                className="block text-3xl font-display uppercase py-3 text-gray-100 hover:text-accent transition-colors duration-300 cursor-pointer"
+              >
+                {item}
+              </Link>
+            </motion.li>
+          ))}
+        </motion.ul>
+
+        <div className="mt-auto p-8">
+          <div className="accent-bar" />
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </>
   );
 };
 

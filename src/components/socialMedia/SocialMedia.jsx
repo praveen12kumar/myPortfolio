@@ -1,24 +1,25 @@
-import React from 'react'
-import { socialMediaLinks } from '../../utils/constants';
+import { motion } from "framer-motion";
+import { socialMediaLinks } from "../../utils/constants";
 
-
-
-
-const SocialMedia = ({className}) => {
+const SocialMedia = ({ className = "", iconClassName = "w-6 h-6" }) => {
   return (
-    <div className="w-full h-full rounded-md bg-slate  z-40">
-    
-        <div className={`w-full h-full  flex ${className} items-center justify-center `}>
-            {
-                socialMediaLinks.map((link, index) => (
-                    <a href={link.href} key={index} target="_blank" rel='noopener noreferrer' className="w-full h-full cursor-pointer flex items-center justify-center">
-                        <link.icon className='w-7 h-7 text-blue  hover:scale-125 hover:transition-all duration-300' />
-                    </a>
-                ))
-            }
+    <div className={`flex ${className} items-center justify-center gap-5`}>
+      {socialMediaLinks.map((link, index) => (
+        <motion.a
+          href={link.href}
+          key={index}
+          target="_blank"
+          rel="noopener noreferrer"
+          whileHover={{ scale: 1.2, y: -3 }}
+          whileTap={{ scale: 0.9 }}
+          transition={{ type: "spring", stiffness: 400, damping: 15 }}
+          className="text-gray-500 hover:text-accent transition-colors duration-300"
+        >
+          <link.icon className={iconClassName} />
+        </motion.a>
+      ))}
     </div>
-    </div>
-  )
-}
+  );
+};
 
-export default SocialMedia
+export default SocialMedia;
